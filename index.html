@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レース結果決定アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>レース結果決定アプリ</h1>
+
+    <!-- 設定エリア -->
+    <div id="settings">
+        <div class="setting-row">
+            <label for="max-number">最大値（3〜18）:</label>
+            <input type="number" id="max-number" min="3" max="18" value="6">
+        </div>
+        <div class="setting-row">
+            <label for="fixed-number1">固定数字1:</label>
+            <input type="number" id="fixed-number1" min="1" max="18">
+            <div class="position-options">
+                <label><input type="radio" name="fixed1-position" value="1">1番目</label>
+                <label><input type="radio" name="fixed1-position" value="2">2番目</label>
+                <label><input type="radio" name="fixed1-position" value="3">3番目</label>
+            </div>
+        </div>
+        <div class="setting-row">
+            <label for="fixed-number2">固定数字2:</label>
+            <input type="number" id="fixed-number2" min="1" max="18">
+            <div class="position-options">
+                <label><input type="radio" name="fixed2-position" value="1">1番目</label>
+                <label><input type="radio" name="fixed2-position" value="2">2番目</label>
+                <label><input type="radio" name="fixed2-position" value="3">3番目</label>
+            </div>
+        </div>
+        <div class="setting-row">
+            <label><input type="checkbox" id="box-checkbox"> BOXオプション（昇順にソート）</label>
+        </div>
+    </div>
+
+    <!-- ボタン群 -->
+    <div id="buttons">
+        <button id="roll-button">ダイスを振る</button>
+        <button id="show-result-button" disabled>結果を表示</button>
+        <button id="save-image-button" disabled>結果を画像として保存</button>
+        <button id="share-button" disabled>結果を共有</button> <!-- 共有ボタンを追加 -->
+        <button id="reset-button">リセット</button>
+    </div>
+
+    <!-- 結果表示エリア -->
+    <div id="accumulated-results">
+        <!-- 蓄積された結果がここに表示されます -->
+    </div>
+
+    <!-- ライブラリとスクリプトの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
